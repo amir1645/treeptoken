@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ژنولوژی شبکه | Network Genealogy</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vazirmatn@latest/Vazirmatn-font-face.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="main-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="title">
+                        <h1>ژنولوژی شبکه</h1>
+                        <p>Network Genealogy</p>
+                    </div>
+                </div>
+                
+                <div class="wallet-section">
+                    <div class="wallet-info">
+                        <div class="network-badge">
+                            <i class="fas fa-circle"></i>
+                            <span>Polygon Mainnet</span>
+                        </div>
+                        <button id="connectWallet" class="connect-btn">
+                            <i class="fas fa-wallet"></i>
+                            <span>اتصال کیف پول</span>
+                        </button>
+                        <div id="walletAddress" class="wallet-address">
+                            <i class="fas fa-plug"></i>
+                            <span>اتصال برقرار نشده</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-value" id="totalUsers">0</span>
+                    <span class="stat-label">کاربران کل</span>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-value" id="totalLevels">0</span>
+                    <span class="stat-label">سطح فعال</span>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="fas fa-code-branch"></i>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-value" id="totalNodes">0</span>
+                    <span class="stat-label">نود نمایش</span>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-value" id="currentLevel">0</span>
+                    <span class="stat-label">سطح شما</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- User Info Panel -->
+            <div class="user-panel">
+                <div class="panel-header">
+                    <h2>
+                        <i class="fas fa-user-circle"></i>
+                        اطلاعات کاربر
+                    </h2>
+                    <div class="panel-actions">
+                        <button class="action-btn refresh-btn" id="refreshData">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                    </div>
+                </div>
+                <div id="userInfo" class="user-info">
+                    <div class="empty-user-state">
+                        <i class="fas fa-wallet"></i>
+                        <p>لطفاً کیف پول خود را متصل کنید</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Network Tree -->
+            <div class="tree-panel">
+                <div class="panel-header">
+                    <h2>
+                        <i class="fas fa-sitemap"></i>
+                        شبکه زیرمجموعه
+                    </h2>
+                    <div class="current-user-info">
+                        <div class="user-badge">
+                            <i class="fas fa-user"></i>
+                            <strong>کاربر فعلی:</strong>
+                            <span id="currentUserId">-</span>
+                        </div>
+                        <div class="view-controls">
+                            <button class="view-btn active" data-view="tree">
+                                <i class="fas fa-project-diagram"></i>
+                            </button>
+                            <button class="view-btn" data-view="list">
+                                <i class="fas fa-list"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="treeContainer" class="tree-container">
+                    <div class="empty-state">
+                        <div class="empty-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3>شبکه‌ای یافت نشد</h3>
+                        <p>پس از اتصال کیف پول، شبکه شما اینجا نمایش داده می‌شود</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="footer-content">
+                <p>ساخته شده با <i class="fas fa-heart"></i> برای جامعه بلاکچین</p>
+                <div class="footer-links">
+                    <span>v1.0.0</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-content">
+            <div class="loading-spinner">
+                <i class="fas fa-circle-notch"></i>
+            </div>
+            <p>در حال بارگذاری شبکه...</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
