@@ -1,69 +1,0 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ژنولوژی شبکه - نمودار درختی پیشرفته</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vazirmatn@latest/Vazirmatn-font-face.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-</head>
-<body>
-    <div class="animated-bg"></div>
-    
-    <div class="container">
-        <!-- Header -->
-        <header>
-            <div class="header-content">
-                <h1>🌳 ژنولوژی شبکه</h1>
-                <div class="wallet-section">
-                    <button id="connectWallet" class="connect-btn">
-                        <span>🔗</span>
-                        اتصال کیف پول
-                    </button>
-                    <div id="walletAddress" class="wallet-address">
-                        اتصال برقرار نشده
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <!-- Main Content -->
-        <main>
-            <!-- User Info -->
-            <div class="user-panel">
-                <div class="panel-header">
-                    <h2>👤 اطلاعات کاربر</h2>
-                </div>
-                <div id="userInfo" class="user-info">
-                    <p>لطفاً کیف پول خود را متصل کنید</p>
-                </div>
-            </div>
-
-            <!-- Tree -->
-            <div class="tree-panel">
-                <div class="tree-header">
-                    <h2>📊 شبکه زیرمجموعه</h2>
-                    <div class="current-user">
-                        <span>🎯</span>
-                        <div>
-                            <strong>کاربر فعلی:</strong>
-                            <span id="currentUserId">-</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="treeContainer" class="tree-container">
-                    <div class="empty-state">
-                        <div class="empty-icon">🌳</div>
-                        <h3>شبکه زیرمجموعه شما</h3>
-                        <p>پس از اتصال کیف پول، نمودار درختی شبکه شما به صورت خودکار نمایش داده خواهد شد</p>
-                    </div>
-                </div>
-            </div>
-        </main>
-    </div>
-
-    <script src="app.js"></script>
-</body>
-</html>
